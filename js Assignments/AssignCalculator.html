@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+<title>Calculator</title>
+<script type="text/javascript">
+    function showresult(choise){
+        var n1=parseFloat(document.getElementById('num1').value);
+        var n2=parseFloat(document.getElementById('num2').value);
+        var r;
+        var c=choise;
+        
+        switch(c)
+            {
+            case 'Add':
+                r=n1+n2;
+                break;
+            case 'Minus':
+                r=n1-n2;
+                break;
+            case 'Multiply':
+                r=n1*n2;
+                break;
+            case 'Divide': 
+                r=n1/n2;
+                break;
+            case 'Percentage':
+                r=n2*100/n1;
+                break;
+            default:
+                break;
+                    
+            }
+        document.getElementById('result').value=r;
+        }
+</script>
+</head>
+<body>
+
+<div class="form-group">
+<h1 class="display-4" style="text-align: center; text-size-adjust: 50; text-decoration-color: #ff9100;" >My calculator</h1>
+<p>Enter first number:  <span> <input class="form-control form-control-sm" name="number1" type="text" size=10 id='num1'/></span></p>
+<p>Enter sencond number:<span> <input class="form-control form-control-sm" name="number2" type="text" size=10 id='num2'/></span></p>
+<p>Result:          <span>     <input class="form-control form-control-sm" type="text" id='result' readonly ></span></p>
+<button class="btn btn-success" onclick="showresult('Add')">+</button>
+<button class="btn btn-danger" onclick="showresult('Minus')">-</button>
+<button class="btn btn-warning" onclick="showresult('Multiply')">*</button>
+<button class="btn btn-primary" onclick="showresult('Divide')">/</button>
+<button class="btn btn-dark" onclick="showresult('Percentage')">%</button>
+</div>
+
+</body>
+</html>
